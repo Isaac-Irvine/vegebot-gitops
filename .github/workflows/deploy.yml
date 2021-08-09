@@ -35,10 +35,10 @@ jobs:
         script: | # todo: generate JWT here
           cd vegebot
           touch .env
-          echo DISCORD_BOT_TOKEN=${{ DISCORD_BOT_TOKEN }} >> .env
+          echo DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} >> .env
           echo POSTGRES_PASSWORD=$(openssl rand -base64 48) >> .env
-          echo POSTGREST_JWT_SECRET=${{ POSTGREST_JWT_SECRET }} >> .env
-          echo POSTGREST_TOKEN=${{ POSTGREST_TOKEN }} >> .env
+          echo POSTGREST_JWT_SECRET=${{ secrets.POSTGREST_JWT_SECRET }} >> .env
+          echo POSTGREST_TOKEN=${{ secrets.POSTGREST_TOKEN }} >> .env
     - name: update and startup server
       uses: appleboy/ssh-action@master
       with:
