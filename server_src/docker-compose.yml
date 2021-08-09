@@ -32,7 +32,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - pgdata:/var/lib/postgresql/data
-  web:
+  vegestats:
     image: tomay0/vegestats
     depends_on:
       - postgrest
