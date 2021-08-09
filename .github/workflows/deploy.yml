@@ -25,7 +25,7 @@ jobs:
         key: ${{ secrets.PRODUCTION_SERVER_KEY }}
         port: ${{ secrets.PRODUCTION_SERVER_PORT }}
         source: "server_src/*"
-        target: "vegebot"
+        target: "vegebot/"
     - name: add env file
       uses: appleboy/ssh-action@master
       with:
