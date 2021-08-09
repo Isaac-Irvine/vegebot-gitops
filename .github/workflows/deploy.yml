@@ -56,5 +56,5 @@ jobs:
         script: |
           cd vegebot
           docker-compose pull
-          docker-compose up -d
+          docker-compose start
 
