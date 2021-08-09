@@ -55,6 +55,6 @@ jobs:
         port: ${{ secrets.PRODUCTION_SERVER_PORT }}
         script: |
           cd vegebot
-          docker-compose update
+          docker-compose pull
           docker-compose up -d
 
