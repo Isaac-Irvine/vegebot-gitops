@@ -37,7 +37,6 @@ services:
     depends_on:
       - postgrest
     restart: always
-    command: "bundle exec rails s -e development -p 80 -b 0.0.0.0" # should be moved to Dockerfile
     environment:
       POSTGREST_TOKEN: ${POSTGREST_TOKEN}
       POSTGREST_URL: postgrest
