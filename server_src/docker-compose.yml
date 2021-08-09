@@ -42,8 +42,6 @@ services:
       POSTGREST_TOKEN: ${POSTGREST_TOKEN}
       POSTGREST_URL: postgrest
       APP_PORT: 80
-    ports: 
-      - "80:80"
 volumes:
   pgdata:
 networks:
