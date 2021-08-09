@@ -7,6 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: shutdown server
+      continue-on-error: true
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.PRODUCTION_SERVER_HOST }}
