@@ -10,6 +10,7 @@ services:
       POSTGRES_HOST: postgres
       POSTGRES_DB: vege_db
       POSTGRES_USER: auth
+      WEBAPP_URL: vegestats.isaacirvine.me
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
       - postgrest
