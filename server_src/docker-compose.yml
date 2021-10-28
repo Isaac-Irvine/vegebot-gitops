@@ -7,10 +7,7 @@ services:
       DISCORD_TOKEN: ${DISCORD_BOT_TOKEN}
       POSTGREST_TOKEN: ${POSTGREST_TOKEN}
       POSTGREST_URL: http://postgrest:3000
-      POSTGRES_HOST: postgres
-      POSTGRES_DB: vege_db
-      POSTGRES_USER: auth
-      WEBAPP_URL: vegestats.isaacirvine.me
+      WEBAPP_URL: http://vegestats.isaacirvine.me
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
       - postgrest
@@ -19,17 +16,14 @@ services:
     image: postgrest/postgrest
     environment:
       PGRST_JWT_SECRET: ${POSTGREST_JWT_SECRET}
-      PGRST_DB_URI: postgres://auth:${POSTGRES_PASSWORD}@postgres:5432/vege_db
-      PGRST_DB_SCHEMA: api
-      PGRST_DB_ANON_ROLE: anon
+      PGRST_DB_URI: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/VegeStats_production
     depends_on:
       - postgres
   postgres:
     restart: always
     image: postgres
     environment:
-      POSTGRES_DB: vege_db
-      POSTGRES_USER: auth
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - pgdata:/var/lib/postgresql/data
